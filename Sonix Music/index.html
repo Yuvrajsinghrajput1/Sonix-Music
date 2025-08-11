@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musix</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-r from-black via-gray-900 to-black">
+  <header>
+    <nav id="navbar" class="w-full h-[60px] flex items-center border-4 border-gray-300 justify-between rounded-xl">
+      <div class="flex items-center space-x-10">
+        <i class="fas fa-music text-2xl text-purple-400 pl-[20px]"></i>
+        <span class="text-lg font-semibold text-gray-200">Sonix Music</span>
+      </div>
+
+      <!-- Signup Form -->
+<!-- <div id="signupForm" style="display:none;">
+  <h2>Signup</h2>
+  <input type="text" id="signupUsername" placeholder="Username">
+  <input type="password" id="signupPassword" placeholder="Password">
+  <button onclick="signup()">Signup</button>
+</div> -->
+    </nav>
+  </header>
+
+  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+
+  <!-- Buttons -->
+  <div class="mb-6">
+    <button onclick="showForm('login')" class="px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-700 mr-4">
+      Login
+    </button>
+    <button onclick="showForm('signup')" class="px-5 py-2 rounded-full bg-gray-700 hover:bg-gray-800">
+      Signup
+    </button>
+  </div>
+
+  <!-- Signup Form -->
+  <div id="signupForm" class="hidden bg-gray-800 p-6 rounded-xl shadow-lg w-80">
+    <h2 class="text-2xl font-bold mb-4 text-center">Signup</h2>
+    <input id="signupUsername" type="text" placeholder="Username"
+      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    <input id="signupPassword" type="password" placeholder="Password"
+      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    <button onclick="signup()" class="w-full bg-purple-600 hover:bg-purple-700 text-white p-2 rounded">Signup</button>
+  </div>
+
+  <!-- Login Form -->
+  <div id="loginForm" class="hidden bg-gray-800 p-6 rounded-xl shadow-lg w-80">
+    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
+    <input id="loginUsername" type="text" placeholder="Username"
+      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    <input id="loginPassword" type="password" placeholder="Password"
+      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+    <button onclick="login()" class="w-full bg-purple-600 hover:bg-purple-700 text-white p-2 rounded">Login</button>
+  </div>
+
+  <!-- Status -->
+  <p id="status" class="mt-4 text-lg font-semibold text-green-400"></p>
+</div>
+  <main id="main" class="flex">
+    <div id="side-bar" class="h-full w-[40%]"></div>
+    <div id="music-list"></div>
+  </main>
+
+  <footer></footer>
+<script src="app.js"></script>
+</body>
+</html>
