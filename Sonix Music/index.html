@@ -27,36 +27,6 @@
 
   <div class="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
 
-  <!-- Buttons -->
-  <div class="mb-6">
-    <button onclick="showForm('login')" class="px-5 py-2 rounded-full bg-purple-600 hover:bg-purple-700 mr-4">
-      Login
-    </button>
-    <button onclick="showForm('signup')" class="px-5 py-2 rounded-full bg-gray-700 hover:bg-gray-800">
-      Signup
-    </button>
-  </div>
-
-  <!-- Signup Form -->
-  <div id="signupForm" class="hidden bg-gray-800 p-6 rounded-xl shadow-lg w-80">
-    <h2 class="text-2xl font-bold mb-4 text-center">Signup</h2>
-    <input id="signupUsername" type="text" placeholder="Username"
-      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
-    <input id="signupPassword" type="password" placeholder="Password"
-      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
-    <button onclick="signup()" class="w-full bg-purple-600 hover:bg-purple-700 text-white p-2 rounded">Signup</button>
-  </div>
-
-  <!-- Login Form -->
-  <div id="loginForm" class="hidden bg-gray-800 p-6 rounded-xl shadow-lg w-80">
-    <h2 class="text-2xl font-bold mb-4 text-center">Login</h2>
-    <input id="loginUsername" type="text" placeholder="Username"
-      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
-    <input id="loginPassword" type="password" placeholder="Password"
-      class="w-full p-2 mb-3 rounded bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
-    <button onclick="login()" class="w-full bg-purple-600 hover:bg-purple-700 text-white p-2 rounded">Login</button>
-  </div>
-
   <!-- Status -->
   <p id="status" class="mt-4 text-lg font-semibold text-green-400"></p>
 </div>
@@ -68,4 +38,5 @@
   <footer></footer>
 <script src="app.js"></script>
 </body>
+
 </html>
