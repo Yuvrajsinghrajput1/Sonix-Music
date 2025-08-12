@@ -105,13 +105,13 @@ function signup() {
         return;
     }
 
-    let users = JSON.parse(localstorage.getItem("users")) || [];
+    let users = JSON.parse(localStorage.getItem("users")) || [];
   if(users.some(user => user.username === username)) {
     alert("user already exists! ");
     return;
   }
   users.push({username, password});
-  localstorage.setItem("users",JSON.stringify(users));
+  localStorage.setItem("users",JSON.stringify(users));
   alert("Sign up successful!");
   showForm('login');
 }
@@ -120,7 +120,7 @@ function login() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
-    let users = JSON.parse(localstorage.getItem("users")) ||[];
+    let users = JSON.parse(localStorage.getItem("users")) ||[];
   let userFound = users.find(user => user.username === username && user.password === password);
 
     if (userFound) {
@@ -162,5 +162,6 @@ function setupPlayButtons() {
     });
   });
 }
+
 
 
