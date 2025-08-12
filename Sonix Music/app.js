@@ -83,6 +83,57 @@ function setupLikeButtons() {
       btn.classList.toggle('bg-purple-700');
     });
   });
+}
+
+function showForm(type) {
+    document.getElementById('loginForm').style.display = type === 'login' ? 'block' : 'none';
+    document.getElementById('signupForm').style.display = type === 'signup' ? 'block' : 'none';
+}
+
+function showForm(type) {
+    document.getElementById('loginForm').classList.add('hidden');
+    document.getElementById('signupForm').classList.add('hidden');
+    document.getElementById(type + 'Form').classList.remove('hidden');
+}
+
+function signup() {
+    const username = document.getElementById('signupUsername').value.trim();
+    const password = document.getElementById('signupPassword').value.trim();
+
+    if (!username || !password) {
+        alert("Please fill both fields");
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    if (users.some(user => user.username === username)){
+      alert("User already exists!");
+      return;
+    }
+
+    users.push({ username, password});
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Signup sucessful!");
+    showForm('login');
+}
+
+function login() {
+    const username = document.getElementById('loginUsername').value.trim();
+    const password = document.getElementById('loginPassword').value.trim();
+
+   
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let userFound = users.find(user => user.username === username && user.password === password);
+
+    if (userFound) {
+        document.getElementById('status').innerText = `Welcome, ${username}!`;
+        alert("Login successful!");
+        document.getElementById('loginForm').classList.add('hidden');
+    } else {
+        alert("Invalid username or password");
+    }
+}
 
 function setupPlayButtons() {
   const playButtons = document.querySelectorAll('.play-btn');
@@ -115,5 +166,3 @@ function setupPlayButtons() {
     });
   });
 }
-
-
