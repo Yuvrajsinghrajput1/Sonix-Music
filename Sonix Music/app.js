@@ -96,7 +96,6 @@ function showForm(type) {
     document.getElementById(type + 'Form').classList.remove('hidden');
 }
 
-
 function signup() {
     const username = document.getElementById('signupUsername').value.trim();
     const password = document.getElementById('signupPassword').value.trim();
@@ -123,7 +122,7 @@ function login() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
-    // const storedPassword = localStorage.getItem(username);
+   
     let users = JSON.parse(localStorage.getItem("users")) || [];
     let userFound = users.find(user => user.username === username && user.password === password);
 
@@ -135,6 +134,7 @@ function login() {
         alert("Invalid username or password");
     }
 }
+
 function setupPlayButtons() {
   const playButtons = document.querySelectorAll('.play-btn');
 
@@ -166,7 +166,3 @@ function setupPlayButtons() {
     });
   });
 }
-
-
-
-
