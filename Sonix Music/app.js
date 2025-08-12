@@ -106,7 +106,7 @@ function signup() {
     }
 
     let users = JSON.parse(localstorage.getItem("users")) || [];
-  if(users.some(user => user. user name === user name)) {
+  if(users.some(user => user.username === username)) {
     alert("user already exists! ");
     return;
   }
@@ -114,8 +114,6 @@ function signup() {
   localstorage.setItem("users",JSON.stringify(users));
   alert("Sign up successful!");
   showForm('login');
-    alert("Signup successful!");
-    showForm('login');
 }
 
 function login() {
@@ -126,7 +124,7 @@ function login() {
   let userFound = users.find(user => user.username === username && user.password === password);
 
     if (userFound) {
-        document.getElementById('status').innerText = `Welcome,${username}!`;
+        document.getElementById('status').innerText = `Welcome, ${username}!`;
         alert("Login successful!");
         document.getElementById('loginForm').classList.add('hidden');
     } else {
@@ -164,4 +162,5 @@ function setupPlayButtons() {
     });
   });
 }
+
 
