@@ -83,18 +83,7 @@ function setupLikeButtons() {
       btn.classList.toggle('bg-purple-700');
     });
   });
-}
 
-function showForm(type) {
-    document.getElementById('loginForm').style.display = type === 'login' ? 'block' : 'none';
-    document.getElementById('signupForm').style.display = type === 'signup' ? 'block' : 'none';
-}
-
-function showForm(type) {
-    document.getElementById('loginForm').classList.add('hidden');
-    document.getElementById('signupForm').classList.add('hidden');
-    document.getElementById(type + 'Form').classList.remove('hidden');
-}
 function setupPlayButtons() {
   const playButtons = document.querySelectorAll('.play-btn');
 
@@ -126,4 +115,5 @@ function setupPlayButtons() {
     });
   });
 }
+
 
