@@ -96,6 +96,7 @@ function showForm(type) {
     document.getElementById(type + 'Form').classList.remove('hidden');
 }
 
+
 function signup() {
     const username = document.getElementById('signupUsername').value.trim();
     const password = document.getElementById('signupPassword').value.trim();
@@ -106,22 +107,25 @@ function signup() {
     }
 
     let users = JSON.parse(localStorage.getItem("users")) || [];
-  if(users.some(user => user.username === username)) {
-    alert("user already exists! ");
-    return;
-  }
-  users.push({username, password});
-  localStorage.setItem("users",JSON.stringify(users));
-  alert("Sign up successful!");
-  showForm('login');
+
+    if (users.some(user => user.username === username)){
+      alert("User already exists!");
+      return;
+    }
+
+    users.push({ username, password});
+    localStorage.setItem("users", JSON.stringify(users));
+    alert("Signup sucessful!");
+    showForm('login');
 }
 
 function login() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
-    let users = JSON.parse(localStorage.getItem("users")) ||[];
-  let userFound = users.find(user => user.username === username && user.password === password);
+    // const storedPassword = localStorage.getItem(username);
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let userFound = users.find(user => user.username === username && user.password === password);
 
     if (userFound) {
         document.getElementById('status').innerText = `Welcome, ${username}!`;
@@ -162,6 +166,7 @@ function setupPlayButtons() {
     });
   });
 }
+
 
 
 
