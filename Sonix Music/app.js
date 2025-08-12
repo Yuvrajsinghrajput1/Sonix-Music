@@ -105,7 +105,15 @@ function signup() {
         return;
     }
 
-    localStorage.setItem(username, password);
+    let users = JSON.parse(localstorage.getItem("users")) || [];
+  if(users.some(user => user. user name === user name)) {
+    alert("user already exists! ");
+    return;
+  }
+  users.push({username, password});
+  localstorage.setItem("users",JSON.stringify(users));
+  alert("Sign up successful!");
+  showForm('login');
     alert("Signup successful!");
     showForm('login');
 }
@@ -114,10 +122,11 @@ function login() {
     const username = document.getElementById('loginUsername').value.trim();
     const password = document.getElementById('loginPassword').value.trim();
 
-    const storedPassword = localStorage.getItem(username);
+    let users = JSON.parse(localstorage.getItem("users")) ||[];
+  let userFound = users.find(user => user.username === username && user.password === password);
 
-    if (storedPassword === password) {
-        document.getElementById('status').innerText = Welcome, `${username}!`;
+    if (userFound) {
+        document.getElementById('status').innerText = `Welcome,${username}!`;
         alert("Login successful!");
         document.getElementById('loginForm').classList.add('hidden');
     } else {
@@ -155,3 +164,4 @@ function setupPlayButtons() {
     });
   });
 }
+
